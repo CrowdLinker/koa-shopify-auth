@@ -2,7 +2,7 @@ import querystring from 'querystring';
 
 import {Context} from 'koa';
 import nonce from 'nonce';
-
+import getHost from '../lib/get-host';
 import {OAuthStartOptions} from '../types';
 
 import getCookieOptions from './cookie-options';
@@ -14,7 +14,8 @@ export default function oAuthQueryString(
   options: OAuthStartOptions,
   callbackPath: string,
 ) {
-  const {host, cookies} = ctx;
+  const host = getHost(ctx);
+  const {cookies} = ctx;
   const {scopes = [], apiKey, accessMode} = options;
 
   const requestNonce = createNonce();
