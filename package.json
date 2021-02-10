@@ -44,9 +44,5 @@
     "node-fetch": "^2.6.0",
     "typescript": "^4.0.2"
   },
-  "sideEffects": false,
-  "files": [
-    "dist/*",
-    "!tsconfig.tsbuildinfo"
-  ]
+  "sideEffects": false
 }
